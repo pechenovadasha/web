@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sticky Footer Navbar Template · Bootstrap v5.2</title>
+    <title>login</title>
 
 <link href="../static/css/bootstrap.css" rel="stylesheet">
 
@@ -13,32 +13,23 @@
   </head>
   <body class="d-flex flex-column h-100">
 
-<header class="p-3 text-bg-dark">
-    <div class="header">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><h1>AskPechenova</h1></li>
-        </ul>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><h1>AskPechenova</h1></a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <a href="new_question.html"><button type="button" class="btn btn-success">ASK</button></a>
+                </form>
+            </div>
+            <div class="user">
+                <a href="log_in.html" style="color: white; margin-right: 5px">Login</a>
+                <a href="registration.html" style="color: white">SignUp</a>
+            </div>
+        </div>
+    </nav>
 
-        <form class="col-6">
-          <input type="search" class=" form-control-dark  " placeholder="Search..." aria-label="Search">
-             <button type="button" class="btn btn-success ">ASK!</button>
-          </form>
-          <div class="col-12">
-              <div class="loggin" align="right">
-                  <h4>Dr.Peper</h4>
-              </div>
-                <div class="avatar-position" align="right">
-                    <img style="padding: 5px" class="log-avatar" src="../static/img/img1.png" alt="" />
-                </div>
-              <div align="right">
-                  <a href="settings.html" class="setting" style="color: white">Settings</a>
-                  <a href="#" class="setting" style="color: white">Log out</a>
-              </div>
-          </div>
-      </div>
-    </div>
-  </header>
+
   <main class="flex-shrink-0">
     <div class="container">
   <div class="line">
@@ -55,8 +46,8 @@
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" value="11111">
   </div>
-                     <button type="submit " class="btn btn-primary btn btn-success">Log In!</button>
-                    <div ><a  style="position:relative; top: 30px" class="tegs" href="">creat new account</a> </div>
+                     <button type="submit" class="btn btn-primary btn btn-success">Log In!</button>
+                    <div ><a  style="position:relative; top: 30px" class="tegs" href="registration.html">creat new account</a> </div>
                 </form>
             </div>
             <div class="col-4">
@@ -85,3 +76,9 @@
         </div>
     </div>
 </main>
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>

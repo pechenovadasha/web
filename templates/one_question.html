@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sticky Footer Navbar Template · Bootstrap v5.2</title>
+    <title>one_question</title>
 
 <link href="../static/css/bootstrap.css" rel="stylesheet">
 
@@ -14,32 +14,25 @@
   </head>
   <body class="d-flex flex-column h-100">
 
-<header class="p-3 text-bg-dark">
-    <div class="header">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><h1>AskPechenova</h1></li>
-        </ul>
-
-        <form class="col-6">
-          <input type="search" class=" form-control-dark  " placeholder="Search..." aria-label="Search">
-            <button type="button" class="btn btn-success " onclick="document.location='new_question.html'">ASK!</button>
-          </form>
-          <div class="col-12">
-              <div class="loggin" align="right">
-                  <h4>Dr.Peper</h4>
-              </div>
-                <div class="avatar-position" align="right">
-                    <img style="padding: 5px" class="log-avatar" src="../static/img/img1.png" alt="" />
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><h1>AskPechenova</h1></a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <a href="new_question.html"><button type="button" class="btn btn-success">ASK</button></a>
+                </form>
+            </div>
+            <img style="margin: 5px" class="log-avatar" src="../static/img/img1.png" alt="">
+            <div class="user">
+                <h1 class="navbar-brand">Dr.Peper</h1>
+                <div>
+                    <a href="settings.html" style="color: white; margin-right: 5px">Settings</a>
+                    <a href="log_in.html" style="color: white">Log out</a>
                 </div>
-              <div align="right">
-                  <a href="#" class="setting" style="color: white">Settings</a>
-                  <a href="#" class="setting" style="color: white">Log out</a>
-              </div>
-          </div>
-      </div>
-    </div>
-  </header>
+            </div>
+        </div>
+    </nav>
 
 <!-- Begin page content -->
 <main class="flex-shrink-0">
@@ -49,7 +42,7 @@
 </div>
         <div class="row">
             <div class="col-8">
-                <div class="question">
+                <div class="main-question">
                     <div class="row">
                         <div class="col-2">
                             <div class="avatar">
@@ -69,7 +62,7 @@
                             <div class="question-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
                             </div>
-<div>
+                            <div>
                                 <h4 class="teg-inline">Tegs:</h4><a class="tegs" href="">teg1</a>
                             </div>
                         </div>
@@ -95,10 +88,10 @@
                             <div class="question-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
                             </div>
- <div class="checkbox">
-      <input type="checkbox" id="click">
-      <label for="click" class="text" > Correct! </label>
-    </div>
+                             <div class="checkbox">
+                                  <input type="checkbox" id="click">
+                                  <label for="click" class="text" > Correct! </label>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -122,19 +115,19 @@
                             <div class="question-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
                             </div>
- <div class="checkbox">
-      <input type="checkbox" id="click">
-      <label for="click" class="text" style="color"> Correct! </label>
-    </div>
+                             <div class="checkbox">
+                                  <input type="checkbox" id="click">
+                                  <label for="click" class="text" style="color"> Correct! </label>
+                                </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="question">
+                <div>
                    <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label"></label>
-    <input type="text" class="form-control" id="exampleInputPassword1" value="Enter your answer here">
-  </div>
+                    <label for="exampleInputPassword1" class="form-label"></label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" value="Enter your answer here">
+                  </div>
                     <button type="submit" class="btn btn-success ">Answer</button>
                 </div>
 
@@ -167,14 +160,8 @@
 </div>
 </main>
 
-<footer class="footer mt-auto py-3 bg-light">
-  <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
-  </div>
-</footer>
 
-
-    <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
 
 
   </body>
