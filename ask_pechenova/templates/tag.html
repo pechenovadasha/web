@@ -1,0 +1,21 @@
+{% extends "inc/base.html" %}
+{% load static %}
+
+{% block content %}
+
+            <div>
+                <div class="tegs">
+                    <a class="tegs" ><h2 class="line">Tag: {{tag}} </h2></a>
+                </div>
+            </div>
+
+    {% for question in page %}
+        {% include "inc/question-item.html" %}
+    {% endfor %}
+
+    {% include "inc/paginator.html" %}
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,60 @@
+{% extends "inc/base.html"%}
+
+{% load static %}
+{% block content %}
+  <div class="line">
+
+</div>
+        <div class="row">
+            <div class="col-8">
+                <div class="main-question">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="{% static "img/img1.png"%}" alt="" />
+
+                            </div>
+                                <button class="button-like">
+                                +
+                            </button>
+                            <button class="button-like">
+                                -
+                            </button>
+                            <button class="button-like"style="background-color: darkseagreen"> 0 </button>
+                        </div>
+                        <div class="col-10">
+                            <h1 class="question-title">{{ question_item.title }}</h1>
+                            <div class="question-text">
+                                {{ question_item.text }}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
+                            </div>
+                            <div>
+                                {% for tag in question.tags %}
+                                <a class="tegs" href="">{{tag}}</a>
+                                {% endfor%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for answer in page %}
+	        	{% include 'inc/answer_item.html' %}
+            	{% endfor %}
+                <div>
+                   <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"></label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" value="Enter your answer here">
+                  </div>
+                    <button type="submit" class="btn btn-success ">Answer</button>
+                </div>
+                {% include "inc/paginator.html" %}
+                </div>
+
+{% endblock%}
+</main>
+
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>

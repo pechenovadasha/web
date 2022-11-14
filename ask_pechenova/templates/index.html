@@ -1,0 +1,27 @@
+{% extends "inc/base.html"%}
+
+{% load static %}
+{% block content %}
+<!-- Begin page content -->
+
+<div class="line">
+        <h1 class="line">New questions</h1> <h3 class="line"><a class="tegs" href="{% url 'hot'%}">Hot Questions </a></h3>
+</div>
+        <div class="row">
+            <div class="col-8">
+
+              {% for question in page %}
+                {% include 'inc/question_item.html'%}
+                {% endfor %}
+              {% include 'inc/paginator.html'%}
+            </div>
+
+
+{% endblock %}
+</main>
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>

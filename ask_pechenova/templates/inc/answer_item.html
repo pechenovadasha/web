@@ -1,0 +1,27 @@
+   {% load static %}
+    <div class="question">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="{% static "img/img2.jpeg"%}" alt="" />
+                            </div>
+                            <button class="button-like">
+                                +
+                            </button>
+                            <button class="button-like">
+                                -
+                            </button>
+                            <button class="button-like"style="background-color: darkseagreen"> 0 </button>
+                        </div>
+                        <div class="col-10">
+                            <h2 class="question-title"></h2>
+                            <div class="question-text">
+                               {{answer.text}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
+                            </div>
+                             <div class="checkbox">
+                                  <input type="checkbox" id="click">
+                                  <label for="click" class="text" > Correct! </label>
+                                </div>
+                        </div>
+                    </div>
+                </div>

@@ -1,0 +1,79 @@
+{% extends "inc/base.html"%}
+
+{% load static %}
+{% block content %}
+  <div class="line">
+        <h1 class="line">Tag: </h1> <h2 class="line">tag1</h2>
+</div>
+        <div class="row">
+            <div class="col-8">
+                <div class="question">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="{% static "img/img1.png"%}" alt="" />
+
+                            </div>
+                                <button class="button-like">
+                                +
+                            </button>
+                            <button class="button-like">
+                                -
+                            </button>
+                            <button class="button-like"style="background-color: darkseagreen"> 0 </button>
+                        </div>
+                        <div class="col-10">
+                            <a class="navbar-brand" href="one_question.html"><h2 class="question-title">Question 1</h2></a>
+                            <div class="question-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
+                            </div>
+                            <div>
+                                <h4 class="teg-inline">Tegs:</h4><a class="tegs" href="">teg1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="{% static "img/img3.webp"%}" alt="" />
+                            </div>
+                                <button class="button-like">
+                                +
+                            </button>
+                            <button class="button-like">
+                                -
+                            </button>
+                            <button class="button-like" style="background-color: darkseagreen"> 0 </button>
+                        </div>
+                        <div class="col-10">
+                            <h2 class="question-title">Question 3</h2>
+                            <div class="question-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
+                            </div>
+                            <div>
+                                <h4 class="teg-inline ">Tegs:</h4><a class="tegs" href="">teg1</a> </h4><a class="tegs" href="">teg2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include 'inc/paginator.html'%}
+            </div>
+            <div class="col-4">
+                {%include 'inc/tegs.html'%}
+            </div>
+        </div>
+</div>
+{% endblock%}
+</main>
+
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>

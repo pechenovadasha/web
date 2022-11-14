@@ -1,0 +1,33 @@
+
+{% load static %}
+                <div class="question">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="{% static "img/img1.png"%}" alt="" />
+
+                            </div>
+                                <button class="button-like">
+                                +
+                            </button>
+                            <button class="button-like">
+                                -
+                            </button>
+                            <button class="button-like"style="background-color: darkseagreen"> 0 </button>
+                        </div>
+                        <div class="col-10">
+                            <a class="navbar-brand" href="{% url 'question' question_id=question.id %}"><h2 class="question-title">{{ question.title }}</h2></a>
+                            <div class="question-text">
+                                {{question.text}}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
+                            </div>
+                            <div>
+
+                                <h4 class="teg-inline">Tags:</h4>
+                                 {% for tag in question.tags %}
+                                <a class="tegs" href="{% url 'tag' tag %}">{{tag}}</a>
+                                {% endfor%}
+                            </div>
+                        </div>
+                    </div>
+                </div>

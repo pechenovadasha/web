@@ -1,0 +1,48 @@
+
+{% extends "inc/base.html"%}
+
+{% load static %}
+{% block content %}
+
+  <div class="line">
+        <h1 class="line">Settings: Dr.Pepper</h1>
+</div>
+    <div class="row">
+            <div class="col-8">
+                <form>
+                    <div class="mb-3">
+    <label for="login" class="form-label">Login</label>
+    <input type="text"  class="form-control" id="login" aria-describedby="emailHelp" value="dr_pepper">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="text" class="form-control" id="email" aria-describedby="emailHelp" value="dr.pepper@mail.ru">
+  </div>
+  <div class="mb-3">
+    <label for="nickname" class="form-label">NickName</label>
+    <input type="text" class="form-control" id="nickname" value="Dr.Pepper">
+  </div>
+                    <div class="mb-3">
+                        <div style="margin-bottom: 15px">
+                            <label for="avatar" class="form-label">Upload avator</label>
+                            <img  class="log-avatar" style="width: 100px; height: 100px;margin-left: 20px" src="{% static "img/img1.png"%}" alt="">
+                        </div>
+
+                        <div class="mb-3 col-sm-8 btn-group-vertical">
+                            <input class="form-control" type="file" id="avatar" value="% static "img/img1.png"%}">
+                          </div>
+                    </div>
+
+  <button type="submit" class="btn btn-success ">Save</button>
+</form>
+</div>
+
+{% endblock%}
+
+</main>
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>
