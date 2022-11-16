@@ -5,18 +5,19 @@
                             <div class="avatar">
                                 <img src="{% static "img/img2.jpeg"%}" alt="" />
                             </div>
-                            <button class="button-like">
+                            <button class="button-like">{{ answer.get_likes }}
                                 +
                             </button>
-                            <button class="button-like">
+                            <button class="button-like">{{ answer.get_dislikes }}
                                 -
                             </button>
-                            <button class="button-like"style="background-color: darkseagreen"> 0 </button>
+                            <h6 style="margin: 10px">{{ answer.get_date }}</h6>
                         </div>
                         <div class="col-10">
-                            <h2 class="question-title"></h2>
+                            <h2 class="question-title">{{ answer.title }} </h2>
+
                             <div class="question-text">
-                               {{answer.text}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
+                               {{answer}}
                             </div>
                              <div class="checkbox">
                                   <input type="checkbox" id="click">

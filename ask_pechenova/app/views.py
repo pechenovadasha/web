@@ -1,12 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator
-
 from . import models
 
 
+def paginate(request, objects_list, per_page=10):
+    paginator = Paginator(objects_list, per_page)
+    page_num = request.GET.get('page')
+    page_obj = paginator.get_page(page_num)
+    return paginator, page_obj
+
+
 def index(request):
-    paginator = Paginator(models.QUESTIONS, 3)
+    QUESTIONS = models.Question.objects.all()
+    paginator, page_obj = paginate(request, QUESTIONS, 3)
     page_num = request.GET.get('page')
     page_obj = paginator.get_page(page_num)
     context = {'paginator': paginator,
@@ -17,11 +24,10 @@ def index(request):
 
 
 def question(request, question_id: int):
-    if question_id < len(models.QUESTIONS):
-        question_item = models.QUESTIONS[question_id]
-        paginator = Paginator(question_item['answers'], 3)
-        page_num = request.GET.get('page')
-        page_obj = paginator.get_page(page_num)
+    if question_id <= models.Question.objects.last().id:
+        question_item = models.Question.objects.get(id=question_id)
+        paginator, page_obj = paginate(request, question_item.get_answers(), 5)
+
         context = {'paginator': paginator,
                    'page': page_obj,
                    'popular_tags': models.POP_TAGS,
@@ -57,15 +63,10 @@ def hot(request):
 
 
 def tag(request, tag_id: str):
-    tag_questions = []
-    for question_item in models.QUESTIONS:
-        if tag_id in question_item['tags']:
-            tag_questions.append(question_item)
-
-    if len(tag_questions) > 0:
-        paginator = Paginator(tag_questions, 3)
-        page_num = request.GET.get('page')
-        page_obj = paginator.get_page(page_num)
+    if models.Tags.objects.filter(name=tag_id).count() > 0:
+        tag = models.Tags.objects.get(name=tag_id)
+        tag_questions = tag.tag_question()
+        paginator, page_obj = paginate(request, tag_questions, 3)
         context = {'paginator': paginator,
                    'page': page_obj,
                    'tag': tag_id,
@@ -73,4 +74,4 @@ def tag(request, tag_id: str):
                    'best_members': models.BEST_MEMBERS}
         return render(request, 'tag.html', context=context)
     else:
-        return HttpResponse(status=404, content="Not found")
+        return HttpResponse(status=404, content="Not found such tag")

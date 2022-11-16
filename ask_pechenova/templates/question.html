@@ -14,10 +14,10 @@
                                 <img src="{% static "img/img1.png"%}" alt="" />
 
                             </div>
-                                <button class="button-like">
+                                <button class="button-like" {{ question.get_likes }}>
                                 +
                             </button>
-                            <button class="button-like">
+                            <button class="button-like" {{ question.get_dislikes }}>
                                 -
                             </button>
                             <button class="button-like"style="background-color: darkseagreen"> 0 </button>
@@ -25,12 +25,11 @@
                         <div class="col-10">
                             <h1 class="question-title">{{ question_item.title }}</h1>
                             <div class="question-text">
-                                {{ question_item.text }}
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
+                                {{ question.get_text }}
                             </div>
                             <div>
-                                {% for tag in question.tags %}
-                                <a class="tegs" href="">{{tag}}</a>
+                                {% for tag in question.get_tags%}
+                                <a class="tegs" href="{% url "tag" tag_id=tag %}">{{tag}}</a>
                                 {% endfor%}
                             </div>
                         </div>

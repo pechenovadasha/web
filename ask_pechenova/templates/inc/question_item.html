@@ -19,13 +19,12 @@
                             <a class="navbar-brand" href="{% url 'question' question_id=question.id %}"><h2 class="question-title">{{ question.title }}</h2></a>
                             <div class="question-text">
                                 {{question.text}}
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea, expedita hic magnam officia qui quod sed soluta suscipit vitae.
                             </div>
                             <div>
 
                                 <h4 class="teg-inline">Tags:</h4>
-                                 {% for tag in question.tags %}
-                                <a class="tegs" href="{% url 'tag' tag %}">{{tag}}</a>
+                                 {% for tag in question.get_tags %}
+                                <a class="tegs" href="{% url 'tag' tag_id=tag %}">{{tag}}</a>
                                 {% endfor%}
                             </div>
                         </div>
