@@ -23,16 +23,15 @@
                     <a href="{% url 'new_question'%}"><button type="button" class="btn btn-success">ASK</button></a>
                 </form>
             </div>
-            <img style="margin: 5px" class="log-avatar" src="{% static "img/img1.png"%}" alt="">
+            {% if username %}
+             <a href="{% url 'logout' %}" style="color: white; margin-right: 5px">logout({{ username }})</a>
+            {% else %}
             <div class="user">
-                <h1 class="navbar-brand">Dr.Peper</h1>
-                <div>
-                    <a href="{% url 'settings' %}" style="color: white; margin-right: 5px">Settings</a>
-                    <a href="{% url 'log_in'%}" style="color: white">Log out</a>
-                </div>
+              <a href="{% url 'login' %}" style="color: white; margin-right: 5px">Login</a>
+                    <a href="{% url 'signup' %}" style="color: white">Singup</a>{% endif %}
             </div>
         </div>
-</nav>
+    </nav>
 
 <main class="flex-shrink-0">
 <div class="container">

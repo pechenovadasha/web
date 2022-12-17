@@ -1,4 +1,5 @@
 import django.contrib.auth.backends
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.db.models import Count
 
@@ -55,6 +56,7 @@ class Question(models.Model):
     title = models.CharField(max_length=100, unique=True)
     text = models.CharField(max_length=10000)
     date = models.DateField(auto_now_add=True)
+    question_tags = models.CharField(max_length=100)
     like = models.ManyToManyField(Member, related_name="question_likes", blank=True)
     dislike = models.ManyToManyField(Member, related_name="question_dislikes", blank=True)
     author = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, related_name="questions")
@@ -133,4 +135,3 @@ class Tags(models.Model):
 
     def __str__(self):
         return self.name
-

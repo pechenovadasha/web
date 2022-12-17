@@ -21,13 +21,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('question/<int:question_id>', views.question, name='question'),
-    path('log_in', views.log_in, name='log_in'),
+    path('login', views.login, name='login'),
     path('settings', views.settings, name='settings'),
     path('new_question', views.new_question, name='new_question'),
     path('filter_tag', views.filter_tag, name='filter_tag'),
-    path('registration', views.registration, name='registration'),
+    path('signup', views.signup, name='signup'),
     path('tag/<str:tag_id>', views.tag, name='tag'),
     path('hot', views.hot, name='hot'),
+    path('logout', views.logout, name='logout')
 
 
 ]
