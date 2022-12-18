@@ -38,13 +38,16 @@
                 {% for answer in page %}
 	        	{% include 'inc/answer_item.html' %}
             	{% endfor %}
+            <form  method="post">
                 <div>
+                    {{ form.text }}
                    <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label"></label>
                     <input type="text" class="form-control" id="exampleInputPassword1" value="Enter your answer here">
                   </div>
                     <button type="submit" class="btn btn-success ">Answer</button>
                 </div>
+            </form>
                 {% include "inc/paginator.html" %}
                 </div>
 

@@ -7,7 +7,7 @@ from django.template.context_processors import csrf
 from django.urls import reverse
 
 from . import models
-from .forms import LoginForm, RegistrationForm, AskForm
+from .forms import LoginForm, RegistrationForm, AskForm, AnswerForm
 
 
 def paginate(request, objects_list, per_page=10):
@@ -68,17 +68,20 @@ def settings(request):
 
 
 def new_question(request):
-    if request.method == 'GET':
-        ask_form = AskForm()
     if request.method == 'POST':
-        ask_form = AskForm(request.POST)
-        if ask_form:
-
+        form = AskForm(request.POST)
+        if form.is_valid():
+            form.save()
             return redirect(reverse('index'))
         else:
-            ask_form.add_error(field=None, error="Wrong question", )
+            form.add_error(field=None, error="Something goes wrong")
+    form = AskForm()
 
-    return render(request, 'new_question.html', {'form': ask_form})
+    data = {
+        'form': form
+    }
+
+    return render(request, 'new_question.html', data)
 
 
 def filter_tag(request):
@@ -134,6 +137,22 @@ def tag(request, tag_id: str):
         return render(request, 'tag.html', context=context)
     else:
         return HttpResponse(status=404, content="Not found such tag")
+
+
+def answer(request):
+    if request.method == 'POST':
+        form = AnswerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('index'))
+        else:
+            form.add_error(field=None, error="Something goes wrong")
+    form = AnswerForm()
+
+    data = {
+        'form': form
+    }
+    return request, data
 
 
 def logout(request):
